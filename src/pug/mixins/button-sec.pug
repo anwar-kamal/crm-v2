@@ -1,0 +1,7 @@
+mixin button-sec(activeIndex , s,ss )
+	div.w-full.h-full
+		button.relative.overflow-hidden.text-primary.group.transition-colors.duration-500.ease-out( class=`hover:text-white cent  ${ss} p-1  md:px-6  md:py-3  bg-white rounded-2xl  gap-2.5 inline-flex md:text-base text-sm font-semibold hover:font-medium  capitalize leading-7 tracking-wider  cursor-pointer border-2 border-primary  lg:whitespace-nowrap`)
+			span.absolute.inset-0.-ml-10.transition-all.duration-300.origin-top-right.rotate-90.-translate-x-full.translate-y-full.bg-primary.ease(class='group-hover:-rotate-180 ')
+			span.relative.cent.gap-2
+				span #{activeIndex}
+				i(class=`${s}`)

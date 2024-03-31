@@ -1,0 +1,64 @@
+include ../mixins/table.pug
+.p-4.w-full.overflow-x-auto.gap-6(x-show="tab==='test'"  :class="tab==='test' ? '!grid' : '' "  class=" hidden")
+	.cent__bet
+		h2.sub__header__primary(class="!pb-0") Placement Test
+		button.cent.gap-2(class="text-primary text-sm font-bold  " href="" @click="CreateOrder = true")
+			i( class="fa-solid fa-plus")
+			span Generate link
+	+table()
+		+t('thead')
+			th(scope='col') #
+			th(scope='col') Exam
+			th(scope='col') Score
+			th(scope='col') Created at
+			th(scope='col') Created by
+			th(scope='col') 
+		+t('tbody')
+			tr 
+				th 1
+				th Placement test v5.01
+				td Level 3
+				td 45 minutes ago
+				td Rana El Dardiry
+				td.text-primary.font-semibold
+					a(href="")  Demo Link
+			tr 
+				th 1
+				th Placement test v5.01
+				td Level 3
+				td 45 minutes ago
+				td Rana El Dardiry
+				td.text-primary.font-semibold
+					a(href="")  Demo Link
+			tr 
+				th 1
+				th Placement test v5.01
+				td Level 3
+				td 45 minutes ago
+				td Rana El Dardiry
+				td.text-primary.font-semibold
+					a(href="")  Demo Link
+			tr 
+				th 1
+				th Placement test v5.01
+				td Level 3
+				td 45 minutes ago
+				td Rana El Dardiry
+				td.text-primary.font-semibold
+					a(href="")  Demo Link
+			tr 
+				th 1
+				th Placement test v5.01
+				td Level 3
+				td 45 minutes ago
+				td Rana El Dardiry
+				td.text-primary.font-semibold
+					a(href="")  Demo Link
+			tr 
+				th 1
+				th Placement test v5.01
+				td Level 3
+				td 45 minutes ago
+				td Rana El Dardiry
+				td.text-primary.font-semibold
+					a(href="")  Demo Link

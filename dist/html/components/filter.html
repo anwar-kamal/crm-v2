@@ -1,0 +1,83 @@
+
+<div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden justify-end" x-show="filter" :class="filter ? '!flex' :'' ">
+  <div class="bg-white relative p-4 py-8 grid gap-6 w-72 h-screen content-start" x-show="filter" x-transition:enter="transition transform ease-out duration-500 " x-transition:enter-start="opacity-0 rtl:translate-x-[200px] ltr:-translate-x-[-200px]" x-transition:enter-end="opacity-100 " x-transition:leave="transition transform ease-in duration-300" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 rtl:translate-x-[200px] ltr:-translate-x-[-200px]">
+    <div class="cent__bet">
+      <div class=" text-neutral-700  font-semibold leading-[18px] tracking-widest">Filter</div>
+      <button class="fa-solid fa-x  text-primary hover:scale-150 duration-200 transform " @click="filter = false"></button>
+    </div>
+    <form class="h-[75vh]  content-start grid gap-6 overflow-y-auto relative" id="select">
+      <div class="cent__bet">
+        <div class=" text-neutral-600  text-sm font-semibold leading-[18px] tracking-wider">New Leads</div>
+        <div class=" cursor-pointer text-neutral-500  text-sm font-semibold leading-[18px] hover:text-primary hover:scale-110 transform duration-200 tracking-wider" onclick="resetForm ('select')">Reset</div>
+      </div>
+      <select>    
+        <option style="color:#eee !important" disabled="disabled" selected="selected" hidden="hidden">City</option>
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+        <option value="FR">France</option>
+        <option value="DE">Germany	</option>
+      </select>
+      <select>    
+        <option style="color:#eee !important" disabled="disabled" selected="selected" hidden="hidden">Lead Type</option>
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+        <option value="FR">France</option>
+        <option value="DE">Germany	</option>
+      </select>
+      <select>    
+        <option style="color:#eee !important" disabled="disabled" selected="selected" hidden="hidden">Lead source</option>
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+        <option value="FR">France</option>
+        <option value="DE">Germany	</option>
+      </select>
+      <select>    
+        <option style="color:#eee !important" disabled="disabled" selected="selected" hidden="hidden">Products</option>
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+        <option value="FR">France</option>
+        <option value="DE">Germany	</option>
+      </select>
+      <select>    
+        <option style="color:#eee !important" disabled="disabled" selected="selected" hidden="hidden">Branch</option>
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+        <option value="FR">France</option>
+        <option value="DE">Germany	</option>
+      </select>
+      <div class="h-0.5 opacity-50 bg-gray-300 rounded-[100px]"></div>
+      <form class="content-start grid gap-6" id="date">
+        <div class="cent__bet">
+          <div class=" text-neutral-600  text-sm font-semibold leading-[18px] tracking-wider">Creation Date</div>
+          <div class=" cursor-pointer text-neutral-500  text-sm font-semibold leading-[18px] hover:text-primary hover:scale-110 transform duration-200 tracking-wider">Reset</div>
+        </div>
+        <div class="grid gap-1" date-rangepicker="" datepicker-buttons="datepicker-buttons" datepicker-orientation="{top right}">
+          <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"></svg>
+              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
+            </div>
+            <input class="w-full !px-2 !py-2" name="start" type="text" placeholder="From"/>
+          </div><span class="text-gray-500">to</span>
+          <div class="relative cent w-full h-full">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"></svg>
+              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
+            </div>
+            <input class="w-full !px-2 !py-2" name="end" type="text" placeholder="To"/>
+          </div>
+        </div>
+      </form>
+    </form>
+    <div class="absolute bg-white right-0 left-0 bottom-10 px-3">
+      <div class="grid grid-cols-2 gap-3">
+        <div class=" text-neutral-600  text-sm font-semibold leading-[18px] tracking-wider" onclick="resetFormAll ()"> 
+          <div class="w-full h-full">
+            <button class="relative overflow-hidden text-primary group transition-colors duration-500 ease-out hover:text-white cent  w-full  p-1  md:px-6  md:py-3  bg-white rounded-2xl  gap-2.5 inline-flex md:text-base text-sm font-semibold hover:font-medium  capitalize leading-7 tracking-wider  cursor-pointer border-2 border-primary  lg:whitespace-nowrap"><span class="absolute inset-0 -ml-10 transition-all duration-300 origin-top-right rotate-90 -translate-x-full translate-y-full bg-primary ease group-hover:-rotate-180 "></span><span class="relative cent gap-2"><span>Reset all</span><i></i></span></button>
+          </div>
+        </div>
+        <button class="button__primary md:px-0 md:text-sm !px-2 !text-[13]">Apply Now</button>
+      </div>
+    </div>
+  </div>
+</div>

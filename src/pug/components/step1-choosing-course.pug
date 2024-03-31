@@ -1,0 +1,137 @@
+include ../mixins/table.pug
+
+.grid.content-start(class=" md:grid-cols-2 gap-6")
+	select     
+		option( style="color:#eee !important" disabled selected hidden) Branch Order
+		option(value='US') United States
+		option(value='CA') Canada
+		option(value='FR') France
+		option(value='DE') Germany	
+	select     
+		option( style="color:#eee !important" disabled selected hidden) Currency
+		option(value='US') United States
+		option(value='CA') Canada
+		option(value='FR') France
+		option(value='DE') Germany	
+div(class="  bg-white rounded-2xl border border-gray-300 p-4 pt-6 grid gap-6 content-start")
+	div(class="flex sm:justify-around  gap-8  flex-wrap whitespace-nowrap w-full")
+		.radio-button
+			input.radio-button__input(type="radio" name="radio-group" id="radio1" checked)
+			label.radio-button__label(for="radio1")
+				span.radio-button__custom
+				| Products
+		.radio-button
+			input.radio-button__input(type="radio" name="radio-group" id="radio2")
+			label.radio-button__label(for="radio2")
+				span.radio-button__custom
+				| Offers 
+		.radio-button
+			input.radio-button__input(type="radio" name="radio-group" id="radio3")
+			label.radio-button__label(for="radio3")
+				span.radio-button__custom
+				| Packages
+		.radio-button
+			input.radio-button__input(type="radio" name="radio-group" id="radio4")
+			label.radio-button__label(for="radio4")
+				span.radio-button__custom
+				| Installment packages
+		.radio-button
+			input.radio-button__input(type="radio" name="radio-group" id="radio5")
+			label.radio-button__label(for="radio5")
+				span.radio-button__custom
+				| Others
+	div(class="relative")
+		div(class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none")
+			svg(class="w-4 h-4 text-gray-500 dark:text-gray-400", aria-hidden="true", xmlns="http://www.w3.org/2000/svg", fill="none", viewBox="0 0 20 20")
+				path(stroke="currentColor", stroke-linecap="round", stroke-linejoin="round", stroke-width="2", d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z")
+		input#default-search(type="search", class=" w-full !px-9", placeholder="Search here ...", required)
+	+table()
+		+t('thead')
+			th(scope='col') #
+			th(scope='col') Name
+			th(scope='col') Price
+			th(scope='col') Tax
+			th(scope='col') Total Amount
+			th(scope='col') Actions
+			
+		+t('tbody')
+			tr 
+				th 1
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input(id="red-checkbox" type="checkbox" value="" )
+			tr 
+				th 2
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input(checked id=" red-checkbox" type="checkbox" value="" )
+			tr 
+				th 3
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input(id="red-checkbox" type="checkbox" value="" )
+			tr 
+				th 4
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input(id="red-checkbox" type="checkbox" value="" )
+			tr 
+				th 5
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input(checked id="red-checkbox" type="checkbox" value="" )
+			tr 
+				th 6
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input( id="red-checkbox" type="checkbox" value="" )
+			tr 
+				th 7
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input(id="red-checkbox" type="checkbox" value="" )
+			tr 
+				th 8
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input(id="red-checkbox" type="checkbox" value="" )
+			tr 
+				th 9
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input(checked id="red-checkbox" type="checkbox" value="" )
+			tr 
+				th 10
+				td Chinese Language Online live
+				td 782.61 SAR
+				td 15 %
+				td 3200 SAR
+				td 
+					input( id="red-checkbox" type="checkbox" value="" )

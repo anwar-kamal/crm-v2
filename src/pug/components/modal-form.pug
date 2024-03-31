@@ -1,0 +1,11 @@
+include ../mixins/modal.pug
+
+div(x-show="open" :class="open ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			button(class="fa-solid fa-x" @click="open = false")
+		+slot('body')
+			img(src="../assets/task-complete.png", alt="" class="w-16 h-16 mx-auto" )
+			div( class="text-center text-neutral-700 text-lg font-semibold    leading-[18px]") Password changed successfully
+			button.button__primary 
+				a(href="") Go to Login Page

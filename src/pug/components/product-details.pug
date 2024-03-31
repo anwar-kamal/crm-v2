@@ -1,0 +1,113 @@
+include ../mixins/table.pug
+include ../mixins/button-sec.pug
+include ./filter
+include ../mixins/modal
+div(x-show="tasks" :class="tasks ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-4.gap-20
+				div( class=" text-neutral-700 text-lg font-semibold leading-[18px]") Tasks 
+					span.text-primary (4)
+				button(class="fa-solid fa-x  text-primary" @click="tasks = false")
+		+slot('body')
+			.grid.gap-4
+				.cent__bet.gap-4
+					h4.text-neutral-600.font-semibold(class="text-sm md:text-base shrink-0") Name Lead :
+					h4.text-neutral-700.font-semibold(class="text-sm md:text-base") (Abdul Rahman Moeed Al Harthy)
+				ul.grid.gap-4.py-4( class="max-h-60 overflow-y-auto text-sm md:text-base")
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+main.flex-grow.grid.gap-6.overflow-hidden.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12" x-data="{ tab: 'Videos' }")
+	include ./head-tabs
+	a(href="").header__primary__start Human Resources Online Live _VIP
+	include ../mixins/table.pug
+	div(class="  bg-white rounded-2xl border border-gray-300 p-4 py-6 grid gap-6 content-start")
+		.sub__header__primary  Product Info
+		.grid.content-start(class=" md:grid-cols-2  lg:gap-x-16 gap-6  ")
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Original Price
+				p(class="text-neutral-700 text-sm font-bold cent gap-2 ") 1,304.00 SAR
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Category
+				p(class="text-neutral-700 text-sm font-bold ") Chinese language 
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Product Type
+				p(class="text-neutral-700 text-sm font-bold ") Course
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Course Hours
+				p(class="text-neutral-700 text-sm font-bold ") 140 Hrs
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Accountant Number
+				p(class="text-neutral-700 text-sm font-bold ") 4101001008 
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Name in contract
+				p(class="text-neutral-700 text-sm font-bold ") Chinese Language Online live
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Number of levels
+				p(class="text-neutral-700 text-sm font-bold ") 4
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") English Photo
+				p( class="text-primary text-sm font-bold ") 
+					a(href="") View Photo
+	div( class=" relative bg-white rounded-2xl border border-gray-300   grid  content-start overflow-hidden" )
+		ul(class=" w-full whitespace-nowrap p-3 border-b overflow-x-auto flex justify-around gap-1 items-center" )
+			li(class="hover:bg-primary hover:bg-opacity-10 w-full text-center cursor-pointer  hover:text-primary  tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'Script'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'Script'")
+				button Script
+			li(class="hover:bg-primary hover:bg-opacity-10 w-full text-center cursor-pointer  hover:text-primary tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'Offers' ? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700 '"  @click="tab = 'Offers'")
+				button Offers
+			li(class="hover:bg-primary hover:bg-opacity-10 w-full text-center cursor-pointer  hover:text-primary text-neutral-700 tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'Packages'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'Packages'")
+				button Packages
+			li(class="hover:bg-primary hover:bg-opacity-10 w-full text-center cursor-pointer  hover:text-primary text-neutral-700 tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'Videos'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'Videos'")
+				button Videos
+		div.p-4.text-zinc-600.leading-9.hidden(x-show="" :class="tab==='Script' ? '!block' :'hidden' ") Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like
+		div.grid.gap-6.p-4(x-show="tab==='Offers'" :class="tab==='Offers' ? '!grid' :'hidden' " class="2xl:grid-cols-3 lg:grid-cols-2 ")
+			include ./offer-card
+			include ./offer-card
+			include ./offer-card
+			include ./offer-card
+			include ./offer-card
+			include ./offer-card
+			include ./offer-card
+			include ./offer-card
+			include ./offer-card
+			include ./offer-card
+
+		div.grid.gap-6.p-4(x-show="tab==='Packages'" :class="tab==='Packages' ? '!grid' :'hidden' " class="2xl:grid-cols-3 lg:grid-cols-2 ")
+			include ./packge-card
+			include ./packge-card
+			include ./packge-card
+			include ./packge-card
+			include ./packge-card
+			include ./packge-card
+			include ./packge-card
+			include ./packge-card
+			include ./packge-card
+			include ./packge-card
+
+		div.grid.gap-6.p-4(x-show="tab==='Videos'" :class="tab==='Videos' ? '!grid' :'hidden' " class="2xl:grid-cols-3 lg:grid-cols-2 ")
+			include ./video-card
+			include ./video-card
+			include ./video-card
+			include ./video-card
+			include ./video-card
+			include ./video-card
+			include ./video-card
+			include ./video-card
+			include ./video-card
+			include ./video-card

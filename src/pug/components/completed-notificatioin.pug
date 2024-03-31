@@ -1,0 +1,21 @@
+div(class="p-4 bg-white rounded-2xl border border-gray-300 " x-data="{open:false}")
+	.cent__bet.relative
+		.cent.gap-2.flex-wrap
+			div( class="w-11 h-[52px] bg-white rounded-xl border border-gray-300 grid items-center shrink-0")
+				div(class="text-center text-neutral-700 text-sm font-semibold  ") 14
+				div(class="text-center text-zinc-600 text-xs font-normal   tracking-wide" ) May
+			.grid.gap-1
+				span(class="text-neutral-700  font-semibold  leading-tight tracking-wide") Call Me 
+				span.cent.gap-1
+					include ./svgs/clock
+					div(class="text-zinc-600 text-xs font-normal  leading-3 tracking-wide") 12:00 pm
+		include ./svgs/completed
+		ul.absolute.-bottom-24.bg-white.z-50.p-5.grid.gap-4.rounded-2xl.drop-shadow-md.items-center.justify-center(x-show="open" :class="open ? '!block' : '' "   class="hidden  ltr:right-0 rtl:left-0")
+			li
+				button.cent.gap-2 
+					include ./svgs/edit-blue
+					span Edit
+			li 
+				button.cent.gap-2 
+					include ./svgs/delete
+					span Delete

@@ -1,0 +1,12 @@
+mixin modal()
+	- var slots = {};
+	mixin slot(name)
+		- slots[name] = block
+	- block ? block() : undefined
+	.fixed.inset-0.bg-black.bg-opacity-50.p-4.cent.z-50
+		.bg-white.rounded-2xl.relative.p-8.grid.gap-6( class="max-w-[560px] w-full"  role="document" )
+			if slots['x']
+					- slots['x']();
+			if slots['body']
+				.grid.gap-6
+					- slots['body']();

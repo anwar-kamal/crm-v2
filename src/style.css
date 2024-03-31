@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'prime';
+  src: url('../fonts/SomarSans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family:
+    'prime',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+}
+main {
+  min-height: 100%;
+}
+img {
+  width: 100%;
+  display: block;
+}
+.container {
+  max-width: 1336px;
+}
+
+.cent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cent__wrap {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cent__bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button__primary {
+  @apply md:px-6 md:py-3 p-1 h-full bg-primary rounded-2xl  gap-2 inline-flex text-white md:text-base text-sm font-medium  capitalize leading-7 tracking-wider    cent cursor-pointer border-2 border-primary  lg:whitespace-nowrap;
+}
+
+.header__primary {
+  @apply text-neutral-700  md:text-3xl text-xl font-bold  capitalize leading-relaxed text-center;
+}
+.header__primary__start {
+  @apply text-neutral-700  md:text-2xl text-base font-bold  capitalize leading-relaxed text-start py-2.5;
+}
+.sub__header__primary {
+  @apply text-neutral-700 md:text-lg text-sm  capitalize   font-semibold leading-[18px] pb-2;
+}
+
+.view__more {
+  @apply text-primary md:text-base text-xs  capitalize text-center  font-semibold leading-[18px];
+}
+
+aside:hover .status {
+  @apply block;
+}
+aside:hover .status__sm {
+  @apply hidden;
+}
+aside:hover .leads {
+  @apply grid;
+}
+aside:hover .tasks {
+  @apply grid;
+}
+.leads,
+.tasks {
+  display: none;
+}
+
+aside:hover .status__sm {
+  @apply hidden;
+}
+
+.aside__links {
+  @apply text-white font-medium leading-[14px] tracking-wide  py-2.5 p-1  whitespace-nowrap;
+}
+
+input,
+textarea,
+select {
+  @apply md:px-4 focus:ring-primary focus:border-primary p-3 bg-white rounded-2xl border border-gray-300 placeholder:opacity-40  placeholder:text-zinc-600 placeholder:text-sm placeholder:tracking-wide !important;
+}
+input[type='checkbox'] {
+  @apply text-primary bg-bggray border-gray-400 rounded focus:outline-0 checked:bg-primary checked:text-2xl p-3  checked:border-primary !important;
+}
+select {
+  @apply w-full min-w-40;
+}
+select option {
+  color: #474747 !important;
+  font-weight: 500 !important;
+}
+select option:checked {
+  background-color: #881010 !important;
+  color: #fff !important;
+}
+
+label {
+  @apply px-2 text-sec  text-sm font-semibold  leading-[14px];
+}
+
+.eye__password {
+  @apply absolute top-10 rtl:left-4 ltr:right-4 cursor-pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.hide-scroll::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none !important;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dfc9c9;
+  border-radius: 200px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c28e8e;
+}
+
+/*  */
+
+.radio-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-button__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-button__label {
+  display: inline-block;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.radio-button__custom {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.radio-button__input:checked + .radio-button__label .radio-button__custom {
+  transform: translateY(-50%) scale(0.9);
+  border: 5px solid #9f1916;
+  color: #9f1916;
+}
+
+.radio-button__input:checked + .radio-button__label {
+  color: #9f1916;
+}
+
+.radio-button__label:hover .radio-button__custom {
+  transform: translateY(-50%) scale(1.2);
+  border-color: #9f1916;
+  box-shadow: 0 0 10px #9f191680;
+}
+
+/*  */
+
+thead th {
+  @apply px-4 py-2  text-start  tracking-wider capitalize  bg-gray-200;
+}
+tbody tr {
+  border-bottom: 1px solid #f3f2f2;
+}
+tbody tr:nth-last-child() {
+  border-bottom: none;
+}
+tbody tr:nth-child(even) {
+  @apply bg-bggray drop-shadow-sm;
+}
+tbody tr:nth-child(even) th {
+  @apply bg-bggray px-4 py-2 font-semibold text-primary whitespace-nowrap text-start text-sm tracking-wide rtl:border-l ltr:border-r;
+}
+tbody tr:nth-child(odd) th {
+  @apply bg-white px-4 py-2 font-semibold text-primary whitespace-nowrap text-start text-sm tracking-wide rtl:border-l ltr:border-r;
+}
+
+tbody td {
+  @apply p-4 text-neutral-800 text-sm font-medium tracking-wider  !important;
+}
+
+.activity {
+  @apply bg-bggray rounded-2xl p-4 text-neutral-700 text-sm font-normal leading-8 hover:bg-gray-200 duration-200 drop-shadow;
+}
+.activity::before {
+  content: '\f111';
+  font-family: 'Font Awesome 5 Free';
+  @apply absolute -top-2 right-1 m-1.5 text-primary text-[8px] font-extrabold;
+}
+.viewed {
+  @apply bg-white  rounded-2xl p-4 text-neutral-700 text-sm font-normal leading-8 hover:bg-gray-50 duration-200;
+}
+#chartdiv {
+  width: 100%;
+  height: 100%;
+}
+
+/* progress bar style */
+
+:root {
+  --line-border-fill: #9f1916;
+  --line-border-empty: #898989;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-bottom: 35px;
+  gap: 1rem;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: white;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  border: 5px solid var(--line-border-empty);
+  /* box-shadow: 0px 0px 10px #9f181672; */
+  transition: 0.75s ease;
+  position: relative;
+  color: var(--line-border-empty);
+  font-weight: 600;
+}
+
+.circle.active {
+  box-shadow: none;
+  border: 2px solid #27a365dc;
+  color: #27a365dc;
+  font-weight: 500;
+}
+
+.circle.active::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  top: 50%;
+  right: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  @apply absolute w-full text-[#27a365dc] ltr:ml-[3px] rtl:mr-[-17px] font-extrabold;
+}
+.circle.current::after {
+  content: '';
+}
+.circle.current {
+  background-color: var(--line-border-fill);
+  box-shadow: 0px 0px 10px #9f1816ce;
+  border: 5px solid #ffffff;
+  color: var(--line-border-fill);
+  font-weight: 600;
+}
+.btn {
+  @apply px-6 md:py-3 p-1.5 bg-primary rounded-2xl  gap-2 inline-flex text-white md:text-base text-sm font-medium  capitalize leading-7 tracking-wider cent cursor-pointer   lg:whitespace-nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
+
+input[type='color'] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  height: 3em;
+  padding: 0;
+  width: 5em;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::-webkit-color-swatch {
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+  border: 0;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+}

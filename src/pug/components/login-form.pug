@@ -1,0 +1,26 @@
+div(class=" bg-white flex justify-center items-center p-4 md:p-16 w-full")
+	.grid.gap-8.justify-center.w-full
+		img(src="../assets/full-logo.png", alt="" class="max-w-[800px] max-h-[800px]")
+		div(class="header__primary ") Login
+		form(class="grid gap-8 w-full" )
+			.grid.gap-2 
+				label(for="username") Email
+				input(type="text", name="username" id="username" placeholder="Enter user email" autocomplete="username" required    )
+			.grid.gap-2.relative 
+				label(for="password") Password
+				input(type="password", name="password" id="password" placeholder=" Enter user password" class="input-password" autocomplete="current-password" required   )
+				.eye__password.fa-regular.fa-eye
+			div( class=" text-neutral-700 text-base font-semibold capitalize leading-none") Company
+			div(class="cent__bet gap-4  flex-wrap whitespace-nowrap w-full")
+				.radio-button
+					input.radio-button__input(type="radio" name="radio-group" id="radio2")
+					label.radio-button__label(for="radio2")
+						span.radio-button__custom
+						| Proleaders Company for Education
+				.radio-button
+					input.radio-button__input(type="radio" name="radio-group" id="radio1")
+					label.radio-button__label(for="radio1")
+						span.radio-button__custom
+						| SilaVisions Company Ltd.
+			button(class="button__primary") Login
+			a(href="./forget.html" class="text-primary text-base font-bold  capitalize leading-none text-center")  Forgot your password?

@@ -1,0 +1,88 @@
+include ../mixins/table.pug
+.p-4.w-full.overflow-x-auto(x-show="tab==='contacts'" :class="tab==='contacts' ? '!block' : '' "  class=" hidden" )
+	.cent__bet.mb-4 
+		h2.sub__header__primary My Contacts
+		button.cent.gap-2(class="text-primary text-sm font-bold  leading-[14px]" href="" @click="addContacts = true")
+			i( class="fa-solid fa-plus")
+			span Add Contact
+	+table()
+		+t('thead')
+			th(scope='col') #
+			th(scope='col') Contact Type
+			th(scope='col') Contact
+			th(scope='col') Updated By
+			th(scope='col') Created at
+			th(scope='col') Actions
+			
+		+t('tbody')
+			tr 
+				th 1
+				td Mobile
+				td 0539352204
+				td Nermeen Sameh
+				td 12/2/2023
+				td.flex.item-center.gap-6 
+					div(@click="editContacts=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteContacts=true" class=" cursor-pointer")
+						include ./svgs/delete
+			tr 
+				th 2
+				td Mobile
+				td 0539352204
+				td Nermeen Sameh
+				td 12/2/2023
+				td.flex.item-center.gap-6 
+					div(@click="editContacts=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteContacts=true" class=" cursor-pointer")
+						include ./svgs/delete
+					
+			tr 
+				th 3
+				td Mobile
+				td 0539352204
+				td Nermeen Sameh
+				td 12/2/2023
+				td.flex.item-center.gap-6 
+					div(@click="editContacts=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteContacts=true" class=" cursor-pointer")
+						include ./svgs/delete
+					
+			tr 
+				th 4
+				td Mobile
+				td 0539352204
+				td Nermeen Sameh
+				td 12/2/2023
+				td.flex.item-center.gap-6 
+					div(@click="editContacts=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteContacts=true" class=" cursor-pointer")
+						include ./svgs/delete
+					
+			tr 
+				th 5
+				td Mobile
+				td 0539352204
+				td Nermeen Sameh
+				td 12/2/2023
+				td.flex.item-center.gap-6 
+					div(@click="editContacts=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteContacts=true" class=" cursor-pointer")
+						include ./svgs/delete
+					
+			tr 
+				th 6
+				td Mobile
+				td 0539352204
+				td Nermeen Sameh
+				td 12/2/2023
+				td.flex.item-center.gap-6 
+					div(@click="editContacts=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteContacts=true" class=" cursor-pointer")
+						include ./svgs/delete
+					

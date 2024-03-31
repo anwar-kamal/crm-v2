@@ -1,0 +1,297 @@
+include ../mixins/table.pug
+
+div(class="  bg-white rounded-2xl border border-gray-300 p-4 py-6 grid gap-6 content-start")
+	.sub__header__primary  Summary
+	.grid.content-start(class=" md:grid-cols-2  lg:gap-x-16 gap-6  ")
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Start Date
+			p(class="text-neutral-700 text-sm font-bold cent gap-2 ") 2023-12-19 
+				span(@click="editStartDate = true" class="cursor-pointer mb-1 ") 
+					include ./svgs/edit
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") End Date
+			p(class="text-neutral-700 text-sm font-bold ") 2024-12-19 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Branch Order
+			p(class="text-neutral-700 text-sm font-bold ") Proleaders Hamdaniyah Jed - Female 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Currency
+			p(class="text-neutral-700 text-sm font-bold ") SAR 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Products
+			p(class="text-neutral-700 text-sm font-bold ") 4 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Payment Method
+			p(class="text-neutral-700 text-sm font-bold ") Bank Transfer 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Invoice Total
+			p(class="text-blue-700 text-sm font-bold ") 1,300 SAR 
+		
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Taxes Amount
+			p(class="text-neutral-700 text-sm font-bold ") _ 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Prices include Special Discount
+			p(class="text-neutral-700 text-sm font-bold ") _ 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Invoice Total with Taxes
+			p(class="text-neutral-700 text-sm font-bold ") 1,490.75 SAR 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Special Discount
+			p(class="text-neutral-700 text-sm font-bold ") _ 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Total Payments
+			p(class="text-blue-700 text-sm font-bold ") 1,300 SAR 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Paid Amount
+			p(class="text-blue-700 text-sm font-bold ") 500.00 SAR 
+		.cent__bet.gap-6
+			h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Remaining Amount
+			p(class="text-blue-700 text-sm font-bold ") 990.75 SAR 
+		
++table()
+	+t('thead')
+		th(scope='col') #
+		th(scope='col')  Type
+		th(scope='col') Name
+		th(scope='col') Course Level
+		th(scope='col') Course Branch
+		th(scope='col') Preferred Period
+		th(scope='col') Price in offer
+		th(scope='col') Tax
+		th(scope='col') Tax Amount
+		th(scope='col') Total Amount
+		th(scope='col') Register to Course
+	+t('tbody')
+		tr 
+			th 1
+			th Product
+			td Chinese Language Online live
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden) level
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Branch
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Period
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 20.87 SAR
+			td 15 %
+			td 3.13 SAR
+			td 24.00 SAR
+			td No planning courses yet
+		tr 
+			th 2
+			th Product
+			td Chinese Language Online live
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden) level
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Branch
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Period
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 20.87 SAR
+			td 15 %
+			td 3.13 SAR
+			td 24.00 SAR
+			td.text-primary.font-semibold Register
+		tr 
+			th(rowspan="3") 3
+			th(rowspan="3") Package
+			td Chinese Language Online live
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden) level
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Branch
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Period
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 20.87 SAR
+			td 15 %
+			td 3.13 SAR
+			td 24.00 SAR
+			td.text-primary.font-semibold Register
+		tr 
+			td Chinese Language Online live
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden) level
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Branch
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Period
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 20.87 SAR
+			td 15 %
+			td 3.13 SAR
+			td 24.00 SAR
+			td.text-primary.font-semibold Register
+		tr 
+			td Chinese Language Online live
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden) level
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Branch
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Period
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 20.87 SAR
+			td 15 %
+			td 3.13 SAR
+			td 24.00 SAR
+			td.text-primary.font-semibold Register
+		tr 
+			th(rowspan="3") 4
+			th(rowspan="3") Package
+			td Chinese Language Online live
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden) level
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Branch
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Period
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 20.87 SAR
+			td 15 %
+			td 3.13 SAR
+			td 24.00 SAR
+			td.text-primary.font-semibold Register
+		tr 
+			td Chinese Language Online live
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden) level
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Branch
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Period
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 20.87 SAR
+			td 15 %
+			td 3.13 SAR
+			td 24.00 SAR
+			td.text-primary.font-semibold Register
+		tr 
+			td Chinese Language Online live
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden) level
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Branch
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 
+				select
+					option( style="color:#eee !important" disabled selected hidden)  Period
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany
+			td 20.87 SAR
+			td 15 %
+			td 3.13 SAR
+			td 24.00 SAR
+			td.text-primary.font-semibold Register

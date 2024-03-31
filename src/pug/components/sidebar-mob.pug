@@ -1,0 +1,8 @@
+div.bg-black.bg-opacity-50.absolute.inset-0.z-50(class=" md:hidden hidden " x-show="sideBar"   :class="sideBar?'!block ':''"
+		)
+	button(class=" fixed w-10 h-10 cent m-4 rtl:left-0 ltr:right-0 font-bold  z-50 bg-white rounded-full" @click="sideBar=false")
+		i( class="fa-solid fa-xmark fa-lg")
+	aside(class=" sticky top-0 ltr:left-0 rtl:right-0 h-screen bg-[#101113] ltr:rounded-tr-[35px] rtl:rounded-tl-[35px] py-8  w-[256px]" x-show="sideBar"   :class="sideBar?'!block ':''"   			x-transition:enter="transition transform ease-out duration-300"
+			x-transition:enter-start="opacity-0 ltr:translate-x-[-100px]  rtl:translate-x-[100px]"
+			x-transition:enter-end="opacity-100 translate-x-0")
+		include ./aside-bar

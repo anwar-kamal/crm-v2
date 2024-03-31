@@ -1,0 +1,65 @@
+include ../mixins/table.pug
+.p-4.w-full.overflow-x-auto.gap-6(x-show="tab==='requestOff'"  :class="tab==='requestOff' ? '!grid' : '' "  class=" hidden")
+	.cent__bet
+		h2.sub__header__primary(class="!pb-0") Offer Request Details
+		button.cent.gap-2(class="text-primary text-sm font-bold  " href="" @click="requestOff = true")
+			i( class="fa-solid fa-plus")
+			span Request Offer
+	+table()
+		+t('thead')
+			th(scope='col') #
+			th(scope='col') Request by
+			th(scope='col') Reason
+			th(scope='col') Status
+			th(scope='col') Action by
+			th(scope='col') Action reason
+			th(scope='col') Comment
+		+t('tbody')
+			tr 
+				th 1
+				td
+					a(href="") Zeinab El-Sharkawy
+				td.cent.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td
+					div( class=" p-2.5 bg-red-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-red-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Rejected
+				td Fatma Toni
+				td 1700 للفرد
+				td.cent.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+		
+			tr 
+				th 1
+				td
+					a(href="") Zeinab El-Sharkawy
+				td.cent.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td
+					div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Accepted
+				td Fatma Toni
+				td 1700 للفرد
+				td.cent.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+		
+			tr 
+				th 1
+				td
+					a(href="") Zeinab El-Sharkawy
+				td.cent.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td
+					div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Accepted
+				td Fatma Toni
+				td 1700 للفرد
+				td.cent.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+		

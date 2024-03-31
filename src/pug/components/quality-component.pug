@@ -1,0 +1,296 @@
+include ../mixins/table.pug
+include ../mixins/button-sec.pug
+include ./filter
+include ../mixins/modal
+div(x-show="tasks" :class="tasks ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-4.gap-20
+				div( class=" text-neutral-700 text-lg font-semibold leading-[18px]") Tasks 
+					span.text-primary (4)
+				button(class="fa-solid fa-x  text-primary" @click="tasks = false")
+		+slot('body')
+			.grid.gap-4
+				.cent__bet.gap-4
+					h4.text-neutral-600.font-semibold(class="text-sm md:text-base shrink-0") Name Lead :
+					h4.text-neutral-700.font-semibold(class="text-sm md:text-base") (Abdul Rahman Moeed Al Harthy)
+				ul.grid.gap-4.py-4( class="max-h-60 overflow-y-auto text-sm md:text-base")
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+					li.p-2.py-4.cent__bet.gap-4.bg-bggray.rounded-xl.drop-shadow-sm 
+						h5.text-neutral-700 Name Task
+						a(href="").text-primary.font-semibold Rana (Data Nov.Last week )
+main.flex-grow.grid.gap-6.overflow-hidden.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12" x-data="{ tab: 'leads' }")
+	include ./head-tabs
+	a(href="").header__primary__start My quality feedback
+	.grid(class=" grid-cols-12 md:gap-x-6 gap-x-2 gap-y-6") 
+		form(class="md:col-span-5 col-span-9")
+			label(for="default-search", class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white") Search
+			div(class="relative")
+				div(class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none")
+					svg(class="w-4 h-4 text-gray-500 dark:text-gray-400", aria-hidden="true", xmlns="http://www.w3.org/2000/svg", fill="none", viewBox="0 0 20 20")
+						path(stroke="currentColor", stroke-linecap="round", stroke-linejoin="round", stroke-width="2", d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z")
+				input#default-search(type="search", class=" w-full !px-9", placeholder="Search by name , phone ...", required)
+		div(class="col-span-3 w-full  md:hidden" @click="filter = true")
+			+button-sec('',"-ml-2   fa-solid fa-filter","w-full h-full")
+		div.hidden(class="md:block lg:col-span-2")
+		div( class=" relative col-span-12 md:col-span-4 lg:col-span-3 bg-white rounded-2xl border border-gray-300   grid  content-start overflow-hidden text-xs sm:text-sm lg:text-base cent" )
+			ul(class=" w-full whitespace-nowrap p-1  overflow-x-auto  gap-1 grid grid-cols-2 items-stretch " )
+				li(class=" cursor-pointer  hover:bg-primary hover:bg-opacity-10 hover:text-primary  tracking-wider font-semibold px-1 py-2 text-center rounded-2xl  " :class="tab === 'leads'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'leads'")
+					button leads
+				li(class=" cursor-pointer  hover:bg-primary hover:bg-opacity-10 hover:text-primary tracking-wider font-semibold px-1 py-2 rounded-2xl text-center" :class="tab === 'Customers' ? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700 '"  @click="tab = 'Customers'")
+					button Customers
+
+		div(class="md:col-span-2 w-full hidden md:block " @click="filter = true")
+			+button-sec('Filter',"fa-solid fa-filter","w-full h-full")
+	div.overflow-x-auto(x-show="tab === 'leads'")
+		+table()
+			+t('thead')
+				th(class="sticky ltr:left-0 rtl:right-0" scope='col') #
+				th.cursor-pointer(scope='col') 
+					span Call ID
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Task Type
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Critical Mistakes
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Mistakes
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Notes
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Status
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Status percent
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Lead Name
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Updated By
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				
+			+t('tbody')
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-red-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-red-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Failed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-red-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-red-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Failed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-red-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-red-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Failed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+	div.overflow-x-auto(x-show="tab === 'Customers'")
+		+table()
+			+t('thead')
+				th(class="sticky ltr:left-0 rtl:right-0" scope='col') #
+				th.cursor-pointer(scope='col') 
+					span Call ID
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Task Type
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Critical Mistakes
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Mistakes
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Notes
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Status
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Status percent
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Lead Name
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				th.cursor-pointer(scope='col') 
+					span Updated By
+					i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				
+			+t('tbody')
+				tr 
+					th(class="sticky ltr:left-0 rtl:right-0") 1
+					td 2952
+					td Comment From Lead
+					td missing send WhatsApp
+					td edit cs name in English
+					td.cent.w-96
+						span.truncate Asking for details about course no 101 for his child
+						a.text-primary.font-semibold(href="") see more
+					td.text-green-500
+						div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+							div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+					td 100 %
+					td
+						a.text-primary.font-semibold(href="")  Hisham Suleiman
+					td Youliana
+				
+	.cent
+		include ./pagination

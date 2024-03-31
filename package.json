@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.10",
+    "@fullcalendar/daygrid": "^6.1.10",
+    "@fullcalendar/interaction": "^6.1.10",
+    "flowbite": "^2.2.1",
+    "pug": "^3.0.2",
+    "swiper": "^11.0.4"
+  },
+  "scripts": {
+    "pug": " pug -w ./src/pug -o  ./dist/html -P ",
+    "tailwind": " npx tailwindcss -i ./src/style.css -o ./dist/css/output.css --watch ",
+    "format": "prettier --write \"./dist/**/*.html\""
+  }
+}

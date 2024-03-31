@@ -1,0 +1,232 @@
+include ../mixins/table.pug
+include ../mixins/button-sec.pug
+include ../mixins/modal
+div(x-show="editStartDate" :class="editStartDate ? '!block' : '' "  class=" hidden"  )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Edit Start Date
+				div( class="fa-solid fa-x  text-primary" @click="editStartDate = false")
+		+slot('body')
+			.grid.gap-2.w-full 
+				div(class="relative cent w-full h-full")
+					div(class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none")
+						svg(class="w-4 h-4  text-gray-500 dark:text-gray-400", aria-hidden="true", xmlns="http://www.w3.org/2000/svg", fill="currentColor", viewBox="0 0 20 20")
+							path(d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z")
+					input(datepicker, type="text", class="w-full !px-10", placeholder="Start date")
+			.grid.grid-cols-2.gap-4
+				div(@click="editStartDate = false")  
+					+button-sec('Cancel',""," w-full")
+				.button__primary add
+div(x-show="orderSuccessfully" :class="orderSuccessfully ? '!block' : '' "  class=" hidden"  )
+	+modal()
+		+slot('x')
+			.flex.justify-end
+				a( href="/dist/html/profile-new-lead.html" class="fa-solid fa-x  text-primary" @click="orderSuccessfully = false")
+		+slot('body')
+			.cent.flex-col.gap-4 
+				img(src="/dist/assets/task-complete.png", alt="" class=" w-16 h-16")
+				span.sub__header__primary Added Order Successfully
+main.flex-grow.grid.gap-6.overflow-hidden.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12" x-data="{step:1,s:1 , next() {if (this.step < 3) this.step++;if (this.s < 4) this.s++;this.orderSuccessfully = this.s === 4;} ,prev(){if(this.step >= 1)this.step--}}")
+	include ./head-tabs
+	.cent__bet.gap-4
+		a(href="/dist/html/order-status-change.html").header__primary__start Order 
+			span.text-primary (20111 ) 
+			| Muhammad Abdullah
+		button.button__primary Download Contract
+	.grid.gap-8
+		div(class="  bg-white rounded-2xl border border-gray-300 p-4 py-6 grid gap-6 content-start")
+			.sub__header__primary  My Info
+			.grid.content-start(class=" md:grid-cols-2  lg:gap-x-16 gap-6  ")
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Branch Order
+					p(class="text-neutral-700 text-sm font-bold cent gap-2 ") Proleaders Hamdaniyah Jed - Female
+		
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Status
+					p(class="text-neutral-700 text-sm font-bold ") opened
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Created At
+					p(class="text-neutral-700 text-sm font-bold ") 2 months ago
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Updated At
+					p(class="text-neutral-700 text-sm font-bold ") 2022-11-10 11:14:11
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Comments
+					a( href=" " class="text-primary text-sm font-bold ") Show All
+
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Currency
+					p(class="text-neutral-700 text-sm font-bold ") SAR 
+			include ./line-breake
+			.sub__header__primary  Payment Info
+			.grid.content-start(class=" md:grid-cols-2  lg:gap-x-16 gap-6  ")
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Payment Method
+					p(class="text-neutral-700 text-sm font-bold cent gap-2 ") Bank Transfer
+		
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Payment Details
+					div.cent.gap-6(class="text-primary text-sm font-bold ") 
+						button 
+							i(class="fa-solid fa-download fa-lg")
+						button 
+							include ./svgs/eye
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Payment Date
+					p(class="text-neutral-700 text-sm font-bold ") 2023-02-05 14:33:12
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Taxes Amount
+					p(class="text-neutral-700 text-sm font-bold ") _
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Price with taxes
+					a(class="text-neutral-700 text-sm font-bold ") 1,300 SAR
+
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Special Discount
+					p(class="text-neutral-700 text-sm font-bold ") _
+				
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Total Payments
+					p(class="text-neutral-700 text-sm font-bold ") 1,300 SAR
+				
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Remaining Amount
+					p(class="text-blue-700 text-sm font-bold ") 650 SAR
+				.cent__bet.gap-6
+					h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Payment Status
+					div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+						div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Completed
+		
+		+table()
+			+t('thead')
+				th(scope='col') #
+				th(scope='col')  Name
+				th(scope='col') Offer
+				th(scope='col') Course Level
+				th(scope='col')  Branch
+				th(scope='col') Preferred Period
+				th(scope='col') Price 
+				th(scope='col') Tax
+				th(scope='col') Tax Amount
+				th(scope='col') Total price
+				th(scope='col') Start Date
+				th(scope='col') End Date
+				th(scope='col') Status
+			+t('tbody')
+				tr 
+					th 1
+					th General English
+					td Chinese Language Online live 
+						br 
+						span.font-semibold.text-neutral-600  onsite
+					td Level 1
+					td Proleaders Fayhaa 
+						br 
+						span.font-semibold.text-neutral-600  Jed - Male
+					td Fayhaa - Sabahy
+					td 1,200.00 SAR
+					td 0 %
+					td 0.00 SAR
+					td 1,200.00 SAR
+					td 2023-09-10
+					td 2023-09-10
+					td.max-w-72.whitespace-normal Waiting
+				tr 
+					th 1
+					th General English
+					td Chinese Language Online live 
+						br 
+						span.font-semibold.text-neutral-600  onsite
+					td Level 1
+					td Proleaders Fayhaa 
+						br 
+						span.font-semibold.text-neutral-600  Jed - Male
+					td Fayhaa - Sabahy
+					td 1,200.00 SAR
+					td 0 %
+					td 0.00 SAR
+					td 1,200.00 SAR
+					td 2023-09-10
+					td 2023-09-10
+					td.max-w-72.whitespace-normal 
+						a.font-semibold.text-primary(href="/dist/html/order-status-change.html") Transfered 
+						| to customer 23012383
+				tr 
+					th 1
+					th General English
+					td Chinese Language Online live 
+						br 
+						span.font-semibold.text-neutral-600  onsite
+					td Level 1
+					td Proleaders Fayhaa 
+						br 
+						span.font-semibold.text-neutral-600  Jed - Male
+					td Fayhaa - Sabahy
+					td 1,200.00 SAR
+					td 0 %
+					td 0.00 SAR
+					td 1,200.00 SAR
+					td 2023-09-10
+					td 2023-09-10
+					td.max-w-72.whitespace-normal 
+						a.font-semibold.text-primary(href="/dist/html/order-status-change.html") Changed, Transfer to wallet
+				tr 
+					th 1
+					th General English
+					td Chinese Language Online live 
+						br 
+						span.font-semibold.text-neutral-600  onsite
+					td Level 1
+					td Proleaders Fayhaa 
+						br 
+						span.font-semibold.text-neutral-600  Jed - Male
+					td Fayhaa - Sabahy
+					td 1,200.00 SAR
+					td 0 %
+					td 0.00 SAR
+					td 1,200.00 SAR
+					td 2023-09-10
+					td 2023-09-10
+					td.max-w-72.whitespace-normal Waiting
+				tr 
+					th 1
+					th General English
+					td Chinese Language Online live 
+						br 
+						span.font-semibold.text-neutral-600  onsite
+					td Level 1
+					td Proleaders Fayhaa 
+						br 
+						span.font-semibold.text-neutral-600  Jed - Male
+					td Fayhaa - Sabahy
+					td 1,200.00 SAR
+					td 0 %
+					td 0.00 SAR
+					td 1,200.00 SAR
+					td 2023-09-10
+					td 2023-09-10
+					td.max-w-72.whitespace-normal 
+						a.font-semibold.text-primary(href="/dist/html/order-status-change.html") Transfered 
+						| to customer 23012383
+				tr 
+					th 1
+					th General English
+					td Chinese Language Online live 
+						br 
+						span.font-semibold.text-neutral-600  onsite
+					td Level 1
+					td Proleaders Fayhaa 
+						br 
+						span.font-semibold.text-neutral-600  Jed - Male
+					td Fayhaa - Sabahy
+					td 1,200.00 SAR
+					td 0 %
+					td 0.00 SAR
+					td 1,200.00 SAR
+					td 2023-09-10
+					td 2023-09-10
+					td.max-w-72.whitespace-normal 
+						a.font-semibold.text-primary(href="/dist/html/order-status-change.html") Changed, Transfer to wallet
+		.cent 
+			include ./pagination

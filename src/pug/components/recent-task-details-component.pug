@@ -1,0 +1,177 @@
+include ../mixins/table.pug
+include ../mixins/button-sec.pug
+include ../mixins/modal
+
+main.flex-grow.grid.gap-6.overflow-hidden.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12"  x-data="{ tab: 'conversation' }")
+	include ./head-tabs
+	a(href="").header__primary__start Muhammad Abdullah Muhammad Rashid
+	.grid(class=" lg:grid-cols-3 gap-6") 
+		div( class="  relative bg-white rounded-2xl border border-gray-300 p-3  grid gap-6 content-start h-fit" )
+			h4.sub__header__primary Information
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Account name
+				p(class="text-neutral-700 text-sm font-bold ]") Rwan.H( English / online / Barem) Nov.2023 F1
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Account Type
+				p(class="text-neutral-700 text-sm font-bold ]") Lead Group
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Task Type
+				p(class="text-neutral-700 text-sm font-bold ]") Follow up
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Comment
+				p(class="text-neutral-700 text-sm font-bold ]") From 1/11 to 10/11
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Created by
+				p(class="text-neutral-700 text-sm font-bold ]") Sara Elzanaty
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Created at
+				p(class="text-neutral-700 text-sm font-bold ]") 22 hours ago
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Updated by
+				p(class="text-neutral-700 text-sm font-bold ]") 15 hours ago
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Due Time
+				p(class="text-neutral-700 text-sm font-bold ]") 23 hours ago
+		div( class="lg:col-span-2 w-full overflow-x-auto " )
+
+			+table()
+				+t('thead')
+					th(class="sticky ltr:left-0 rtl:right-0" scope='col') #
+					th.cursor-pointer(scope='col') 
+						span Code
+						i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+					th.cursor-pointer(scope='col') 
+						span Name
+						i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+					th.cursor-pointer(scope='col') 
+						span Last Comment
+						i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+					th.cursor-pointer(scope='col') 
+						span Status
+						i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+					th.cursor-pointer(scope='col') 
+						span Created at
+						i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+					th.cursor-pointer(scope='col') 
+						span Updated by
+						i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+				+t('tbody')
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td.text-green-500
+							div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+						td 1 week ago
+						td Sara Elzanaty
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td
+							div( class=" p-2.5 bg-yellow-500  rounded-2xl justify-center bg-opacity-10 items-center gap-2.5 inline-flex")
+								div( class="text-yellow-500 text-sm font-medium leading-[14px]") Not Started
+						td 1 week ago
+						td Sara Elzanaty
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td.text-green-500
+							div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+						td 1 week ago
+						td Sara Elzanaty
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td.text-green-500
+							div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+						td 1 week ago
+						td Sara Elzanaty
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td
+							div( class=" p-2.5 bg-yellow-500  rounded-2xl justify-center bg-opacity-10 items-center gap-2.5 inline-flex")
+								div( class="text-yellow-500 text-sm font-medium leading-[14px]") Not Started
+						td 1 week ago
+						td Sara Elzanaty
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td.text-green-500
+							div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+						td 1 week ago
+						td Sara Elzanaty
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td.text-green-500
+							div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+						td 1 week ago
+						td Sara Elzanaty
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td
+							div( class=" p-2.5 bg-yellow-500  rounded-2xl justify-center bg-opacity-10 items-center gap-2.5 inline-flex")
+								div( class="text-yellow-500 text-sm font-medium leading-[14px]") Not Started
+						td 1 week ago
+						td Sara Elzanaty
+					tr 
+						th(class="sticky ltr:left-0 rtl:right-0") 1
+						td 23142121
+						td 
+							a.text-primary.font-semibold(href="")  Samaher Omar
+						td.cent.w-96
+							span.truncate Asking for details about course no 101 for his child
+							a.text-primary.font-semibold(href="") see more
+						td.text-green-500
+							div( class=" p-2.5 bg-green-500 bg-opacity-10 rounded-2xl justify-center items-center gap-2.5 inline-flex")
+								div( class="text-green-500 text-sm font-medium font-['Somar Sans'] leading-[14px]") Passed
+						td 1 week ago
+						td Sara Elzanaty
+	.cent 
+		include ./pagination

@@ -1,0 +1,110 @@
+include ../mixins/button-sec.pug
+include ../mixins/modal
+div(x-show="modal" :class="modal ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Add Relative Relation on Muhammed
+				button(class="fa-solid fa-x  text-primary" @click="modal = false")
+		+slot('body')
+			.grid.gap-2.w-full 
+				label(for="username") Relative Relation
+				select     
+					option( style="color:#eee !important" disabled selected hidden) Choose a country
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+			.grid.grid-cols-2.gap-4
+				a(href="")  
+					+button-sec('Cancel',""," w-full")
+				.button__primary add
+
+main.flex-grow.grid.gap-6.overflow-hidden.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12" )
+	include ./head-tabs
+	a(href="").header__primary__start Add New lead
+	form.grid(class="gap-6 content-start xl:grid-cols-3 md:grid-cols-2 p-3 md:p-6 py-8  bg-white rounded-2xl border border-gray-300" )
+		.grid.gap-2 
+			label(for="username") Name *
+			input(type="text", name="username" id="username" placeholder="Name" autocomplete="username" required class="") 
+			
+		.grid.gap-2 
+			label(for="tel") Mobile *
+			input(type="tel", name="tel" id="tel" placeholder="Mobile" autocomplete="tel" required   ) 
+		.grid.gap-2 
+			label(for="username") Gender *
+			select     
+				option( style="color:#eee !important" disabled selected hidden) Choose a country
+				option(value='US') United States
+				option(value='CA') Canada
+				option(value='FR') France
+				option(value='DE') Germany	
+		.grid.gap-2 
+			label(for="username") Email
+			input(type="text", name="email" id="email" placeholder=" email" autocomplete="email" required   ) 
+		.grid.gap-2 
+			label(for="username") Nationality *
+			select     
+				option( style="color:#eee !important" disabled selected hidden) Choose a country
+				option(value='US') United States
+				option(value='CA') Canada
+				option(value='FR') France
+				option(value='DE') Germany	
+		.grid.gap-2 
+			label(for="username") Lead Source  *
+			select     
+				option( style="color:#eee !important" disabled selected hidden) Choose a country
+				option(value='US') United States
+				option(value='CA') Canada
+				option(value='FR') France
+				option(value='DE') Germany	
+		.grid.gap-2 
+			label(for="username") Lead Type *
+			select     
+				option( style="color:#eee !important" disabled selected hidden) Choose a country
+				option(value='US') United States
+				option(value='CA') Canada
+				option(value='FR') France
+				option(value='DE') Germany	
+		.grid.gap-2 
+			label(for="username") Branch
+			select     
+				option( style="color:#eee !important" disabled selected hidden) Choose a country
+				option(value='US') United States
+				option(value='CA') Canada
+				option(value='FR') France
+				option(value='DE') Germany	
+		.grid.gap-2 
+			label(for="username") Product
+			select     
+				option( style="color:#eee !important" disabled selected hidden) Choose a Product
+				option(value='US') Product 1	
+				option(value='CA') Product 2
+				option(value='FR') Product 3
+				option(value='DE') Product 4
+		.grid.gap-2 
+			label(for="username") City
+			select     
+				option( style="color:#eee !important" disabled selected hidden) Choose a City
+				option(value='US') United States
+				option(value='CA') Canada
+				option(value='FR') France
+				option(value='DE') Germany	
+		.grid.gap-2 
+			label(for="username") Lead Status *
+			select     
+				option( style="color:#eee !important" disabled selected hidden) Choose a Status
+				option(value='US') United States
+				option(value='CA') Canada
+				option(value='FR') France
+				option(value='DE') Germany	
+		.grid.gap-2 
+			label(for="username") Google ID
+			input(type="text", name="username" id="username" placeholder="Google ID" autocomplete="username" required   ) 
+		.grid.gap-2(class="md:col-span-2 xl:col-span-3")
+			label(for="username") comment
+			textarea#comment(name="", cols="30", rows="10"   ) 
+	.cent__bet 
+		+button-sec('Cancel',"","")
+		button.button__primary Add
+

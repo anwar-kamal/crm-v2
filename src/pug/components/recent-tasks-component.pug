@@ -1,0 +1,68 @@
+include ../mixins/table.pug
+include ../mixins/button-sec.pug
+include ./filter
+main.flex-grow.grid.gap-6.overflow-hidden.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12")
+	include ./head-tabs
+	.cent__bet
+		a(href="").header__primary__start Recent Tasks
+
+	.grid(class=" grid-cols-12 md:gap-x-6 gap-x-2 gap-y-6") 
+		form(class="md:col-span-7 col-span-9 xl:col-span-5")
+			label(for="default-search", class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white") Search
+			div(class="relative")
+				div(class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none")
+					svg(class="w-4 h-4 text-gray-500 dark:text-gray-400", aria-hidden="true", xmlns="http://www.w3.org/2000/svg", fill="none", viewBox="0 0 20 20")
+						path(stroke="currentColor", stroke-linecap="round", stroke-linejoin="round", stroke-width="2", d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z")
+				input#default-search(type="search", class=" w-full !px-9", placeholder="Search by name , phone ...", required)
+		div(class="col-span-3 w-full  md:hidden" @click="filter = true")
+			+button-sec('',"-ml-2   fa-solid fa-filter","w-full h-full")
+		div.hidden(class="md:block lg:col-span-2 xl:col-span-5")
+		div(class="md:col-span-4 lg:col-span-3 xl:col-span-2 w-full hidden md:block relative " x-data="{open:false}")
+			div(@click="open =!open") 
+				+button-sec('Task Type','fa-solid fa-chevron-down','w-full')
+			div.absolute.-left-0.-right-0.z-40(x-show="open" :class="open ? '!block' : '' "  class="top-[55px] hidden" x-transition:enter="transition transform ease-out duration-500 "
+			x-transition:enter-start="opacity-0 translate-y-[-50px]"
+			x-transition:enter-end="opacity-100 "
+			x-transition:leave="transition transform ease-in duration-300"
+			x-transition:leave-start="opacity-100 translate-y-0"
+			x-transition:leave-end="opacity-0 translate-y-[-50px]")
+				ul.bg-white.rounded-2xl.text-neutral-700.grid.gap-4.p-4.justify-center.drop-shadow-md
+					li(class=" cursor-pointer hover:text-primary font-semibold tracking-wider")
+						a(href="/dist/html/add-new-lead.html")  Add New Lead
+					li(class="cursor-pointer hover:text-primary font-semibold tracking-wider")
+						a(href="") Import CSV
+	.grid.gap-6.items-start(class="2xl:grid-cols-3 lg:grid-cols-2  text-white")
+		div( class="   rounded-2xl border border-gray-300 bg-white overflow-hidden")
+			div.p-4.bg-blue-600.cent__bet.gap-3.leading-4 
+				span Overdue
+				span 0
+			.grid.gap-4.p-4.overflow-y-auto(class="h-[634px]")
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+		div( class=" rounded-2xl border border-gray-300 bg-white overflow-hidden" )
+			div.p-4.bg-green-500.cent__bet.gap-3.leading-4 
+				span Today
+				span 0
+			.grid.gap-4.p-4.overflow-y-auto(class="h-[634px]")
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+		div( class=" overflow-hidden  rounded-2xl border border-gray-300 bg-white")
+			div.p-4.bg-red-600.cent__bet.gap-3.leading-4 
+				span Tomorrow
+				span 0 
+			.grid.gap-4.p-4.overflow-y-auto(class="h-[634px]")
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+				include ./task-card
+

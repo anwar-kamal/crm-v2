@@ -1,0 +1,9 @@
+ul(class=" bg-white rounded-2xl p-1 h-18 w-full grid  grid-cols-2 content-center justify-center sm:gap-1 md:hidden" x-data="{tab:'tab1'}")
+	li.px-5.bg-opacity-10.rounded-2xl.whitespace-nowrap.cent(@click="tab='tab2'" :class="tab==='tab2'?'bg-primary text-primary font-semibold fill-primary':'text-neutral-600 fill-[#343A40]'")
+		button.cent.flex-col
+			include ./svgs/account
+			span My Account
+	li.h-full.px-5.bg-opacity-10.rounded-2xl.whitespace-nowrap.cent(@click="tab='tab1'" :class="tab==='tab1'?'bg-primary text-primary font-semibold fill-primary':'text-neutral-600 fill-[#343A40]'")
+		button.cent.flex-col
+			include ./svgs/crm
+			span CRM

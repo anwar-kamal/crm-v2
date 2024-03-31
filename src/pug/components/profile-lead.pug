@@ -1,0 +1,250 @@
+include ../mixins/table.pug
+include ../mixins/button-sec.pug
+include ../mixins/modal
+div(x-show="newEvent" :class="newEvent ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Add New Event
+				button(class="fa-solid fa-x  text-primary" @click="newEvent = false")
+		+slot('body')
+			.grid.gap-4
+				input(type="text", name="" placeholder="Title event")
+				input( type="text" placeholder="Enter date" onfocus="(this.type='datetime-local' )") 
+			.grid.grid-cols-2.gap-4
+				div(@click="newEvent = false")  
+					+button-sec('Cancel',"","  w-full")
+				.button__primary add
+div(x-show="editEvent"  :class="editEvent ? '!block' : '' "  class=" hidden")
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Edit Event
+				button(class="fa-solid fa-x  text-primary" @click="editEvent = false")
+		+slot('body')
+			.grid.gap-4
+				input(type="text", name="" placeholder="Title event")
+				input#d(type="datetime-local", name="")
+			.grid.grid-cols-2.gap-4
+				a(href="")  
+					+button-sec('Cancel',""," w-full")
+				.button__primary add
+div(x-show="deleteEvent" :class="deleteEvent ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.flex.justify-end
+				button(class="fa-solid fa-x  text-primary" @click="deleteEvent = false")
+		+slot('body')
+			.cent.flex-col 
+				img(src="/dist/assets/warning.png", alt=""  class=" w-28 h-28")
+				div(class="text-center text-neutral-700 text-lg font-semibold  leading-9") Do you want to delete this event? 
+			.grid.grid-cols-2.gap-4
+				a(href="")  
+					+button-sec('NO',""," w-full")
+				.button__primary Yes
+div(x-show="addContacts"  :class="addContacts ? '!block' : '' "  class=" hidden")
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Add Contacts 
+				button(class="fa-solid fa-x  text-primary" @click="addContacts = false")
+		+slot('body')
+			.grid.gap-4
+				select     
+					option( style="color:#eee !important" disabled selected hidden) Choose Contact Type
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+				input(type="text", name="" placeholder="Contact")
+			.grid.grid-cols-2.gap-4
+				div(@click="newEvent = false")  
+					+button-sec('Cancel',"","  w-full")
+				.button__primary add
+div(x-show="editContacts" :class="editContacts ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Edit Contacts 
+				button(class="fa-solid fa-x  text-primary" @click="editContacts = false")
+		+slot('body')
+			.grid.gap-4
+				select     
+					option( style="color:#eee !important" disabled selected hidden) Choose Contact Type
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+				input(type="text", name="" placeholder="Contact")
+			.grid.grid-cols-2.gap-4
+				div(@click="newEvent = false")  
+					+button-sec('Cancel',"","  w-full")
+				.button__primary add
+div(x-show="deleteContacts" :class="deleteContacts ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.flex.justify-end
+				button(class="fa-solid fa-x  text-primary" @click="deleteContacts = false")
+		+slot('body')
+			.cent.flex-col 
+				img(src="/dist/assets/warning.png", alt=""  class=" w-28 h-28")
+				div(class="text-center text-neutral-700 text-lg font-semibold  leading-9") Do you want to delete this Contact? 
+			.grid.grid-cols-2.gap-4
+				a(href="")  
+					+button-sec('No',""," w-full")
+				.button__primary Yes
+div(x-show="CreateOpp" :class="CreateOpp ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Create opportunity
+				button(class="fa-solid fa-x  text-primary" @click="CreateOpp = false")
+		+slot('body')
+			.grid.gap-4
+				div(class="relative cent w-full h-full")
+					div(class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none")
+						svg(class="w-4 h-4  text-gray-500 dark:text-gray-400", aria-hidden="true", xmlns="http://www.w3.org/2000/svg", fill="currentColor", viewBox="0 0 20 20")
+							path(d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z")
+					input(datepicker, type="text", class="w-full !px-10", placeholder="Expected Close")
+				input(type="text", name="" placeholder="Forecast Amount")
+				select     
+					option( style="color:#eee !important" disabled selected hidden) Currency
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+			.grid.grid-cols-2.gap-4
+				div(@click="CreateOpp = false")  
+					+button-sec('Cancel',""," w-full")
+				.button__primary add
+div(x-show="CreateOrder" :class="CreateOrder ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Add Identity to make order
+				button(class="fa-solid fa-x  text-primary" @click="CreateOrder = false")
+		+slot('body')
+			.grid.gap-4
+				input(type="text", name="" placeholder="Identity No")
+
+			.grid.grid-cols-2.gap-4
+				div(@click="CreateOrder = false")  
+					+button-sec('Cancel',""," w-full")
+				a(href="/dist/html/profile-add-order.html").button__primary Submit
+div(x-show="editRelative" :class="editRelative ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.cent__bet.gap-20
+				div( class=" text-neutral-700  font-semibold leading-[18px]") Edit Relative Type
+				button(class="fa-solid fa-x  text-primary" @click="editRelative = false")
+		+slot('body')
+			.grid.gap-2 
+				label(for="username") Relative Relation
+				select     
+					option( style="color:#eee !important" disabled selected hidden) Select option
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+			.grid.grid-cols-2.gap-4
+				div(@click="editRelative = false")  
+					+button-sec('Cancel',""," w-full")
+				a(href="/dist/html/profile-add-order.html").button__primary Submit
+
+div(x-show="deleteRealation" :class="deleteRealation ? '!block' : '' "  class=" hidden" )
+	+modal()
+		+slot('x')
+			.flex.justify-end
+				button(class="fa-solid fa-x  text-primary" @click="deleteRealation = false")
+		+slot('body')
+			.cent.flex-col 
+				img(src="/dist/assets/warning.png", alt=""  class=" w-28 h-28")
+				div(class="text-center text-neutral-700 text-lg font-semibold  leading-9") Do you want to delete this relative relation? 
+			.grid.grid-cols-2.gap-4
+				div(@click="deleteRealation = false")  
+					+button-sec('No',""," w-full")
+				.button__primary Yes
+main.flex-grow.grid.gap-6.overflow-hidden.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12"  x-data="{ tab: 'conversation' }")
+	include ./head-tabs
+	a(href="").header__primary__start Muhammad Abdullah Muhammad Rashid
+	.grid(class=" lg:grid-cols-3 gap-6") 
+		div( class="  relative bg-white rounded-2xl border border-gray-300 p-3  grid gap-6 content-start" )
+			.cent__bet.gap-6
+				h4.sub__header__primary Mobile
+				button.cent.gap-2(class="text-primary text-sm font-bold ]") 
+					include ./svgs/edit
+					span  Edit
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Code
+				p(class="text-neutral-700 text-sm font-bold ]") 23145025
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Gender
+				p(class="text-neutral-700 text-sm font-bold ]") Female
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Nationality
+				p(class="text-neutral-700 text-sm font-bold ]") Saudi
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Status
+				include ./new
+			include ./line-breake
+			h4.sub__header__primary Lead Info
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Products
+				p(class="text-neutral-700 text-sm font-bold ]") Chinese language
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Branch
+				p(class="text-neutral-700 text-sm font-bold ]") Proleaders Hamdaniyah Jed - Female
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Lead Type
+				p(class="text-neutral-700 text-sm font-bold ]") Call
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Lead Sourse
+				p(class="text-neutral-700 text-sm font-bold ]") Facebook Ads
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Campaign
+				p(class="text-neutral-700 text-sm font-bold ]") _
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Account Source
+				p(class="text-neutral-700 text-sm font-bold ]") Received Data
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Hows?
+				p(class="text-neutral-700 text-sm font-bold ]") _
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider") Created At
+				p(class="text-neutral-700 text-sm font-bold ]") 2 months ago
+			.cent__bet.gap-6
+				h4( class="text-zinc-600 text-xs font-normal  tracking-wider" ) Assigned At
+				p(class="text-neutral-700 text-sm font-bold ]") 2021-10-16 11:31:51
+		div( class="lg:col-span-2 relative bg-white rounded-2xl border border-gray-300   grid  content-start overflow-hidden" )
+			ul(class=" w-full whitespace-nowrap p-3 border-b overflow-x-auto flex gap-1 items-center" )
+				li(class="hover:bg-primary hover:bg-opacity-10 hover:text-primary  tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'conversation'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'conversation'")
+					button Conversation
+				li(class="hover:bg-primary hover:bg-opacity-10 hover:text-primary tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'Follow' ? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700 '"  @click="tab = 'Follow'")
+					button Follow Up
+				li(class="hover:bg-primary hover:bg-opacity-10 hover:text-primary text-neutral-700 tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'contacts'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'contacts'")
+					button Contacts
+				li(class="hover:bg-primary hover:bg-opacity-10 hover:text-primary text-neutral-700 tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'orders'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'orders'")
+					button Orders
+				li(class="hover:bg-primary hover:bg-opacity-10 hover:text-primary text-neutral-700 tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'relation'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'relation'")
+					button relative relation
+				li(class="hover:bg-primary hover:bg-opacity-10 hover:text-primary text-neutral-700 tracking-wider font-semibold px-4 py-2 rounded-2xl" :class="tab === 'test'? ' bg-primary bg-opacity-10  text-primary':'text-neutral-700'" @click="tab = 'test'")
+					button Placement Test
+
+			include ./conversation
+			include ./follow-up
+			include ./contacts
+			include ./orders
+			include ./relation
+			include ./placement-test

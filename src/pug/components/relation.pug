@@ -1,0 +1,64 @@
+include ../mixins/table.pug
+.p-4.w-full.overflow-x-auto.gap-6(x-show="tab==='relation'"  :class="tab==='relation' ? '!grid' : '' "  class=" hidden")
+	+table()
+		+t('thead')
+			th(scope='col') #
+			th(scope='col') Name
+			th(scope='col') Relative Type
+			th(scope='col') Actions
+
+		+t('tbody')
+			tr 
+				th 1
+				th Ahmad Qabbani
+				td Mother
+				td.flex.item-center.gap-6 
+					div(@click="editRelative=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteRealation=true" class=" cursor-pointer")
+						include ./svgs/delete
+			tr 
+				th 1
+				th Ahmad Qabbani
+				td Mother
+				td.flex.item-center.gap-6 
+					div(@click="editRelative=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteRealation=true" class=" cursor-pointer")
+						include ./svgs/delete
+			tr 
+				th 1
+				th Ahmad Qabbani
+				td Mother
+				td.flex.item-center.gap-6 
+					div(@click="editRelative=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteRealation=true" class=" cursor-pointer")
+						include ./svgs/delete
+			tr 
+				th 1
+				th Ahmad Qabbani
+				td Mother
+				td.flex.item-center.gap-6 
+					div(@click="editRelative=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteRealation=true" class=" cursor-pointer")
+						include ./svgs/delete
+			tr 
+				th 1
+				th Ahmad Qabbani
+				td Mother
+				td.flex.item-center.gap-6 
+					div(@click="editRelative=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteRealation=true" class=" cursor-pointer")
+						include ./svgs/delete
+			tr 
+				th 1
+				th Ahmad Qabbani
+				td Mother
+				td.flex.item-center.gap-6 
+					div(@click="editRelative=true" class=" cursor-pointer")
+						include ./svgs/edit-blue
+					div(@click="deleteRealation=true" class=" cursor-pointer")
+						include ./svgs/delete

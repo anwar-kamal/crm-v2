@@ -1,0 +1,14 @@
+mixin table()
+    - var slotst = {};
+    mixin t(name)
+        - slotst[name] = block
+    - block ? block() : undefined
+    .relative.overflow-x-auto.border-2.whitespace-nowrap.rounded-xl.bg-white
+        table.whitespace-nowrap.w-full.text-sm.text-gray-700.border-spacing-2.overflow-x-auto.rounded-2xl(role="document")
+            thead.bg-gray-200.font-semibold.text-start(class='sm:rounded-lg' )
+                tr
+                if slotst['thead']
+                    - slotst['thead']();
+            tbody
+            if slotst['tbody']
+                - slotst['tbody']();

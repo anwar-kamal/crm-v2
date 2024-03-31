@@ -1,0 +1,85 @@
+
+<div class="p-4 w-full overflow-x-auto gap-6  hidden" x-show="tab==='orders'" :class="tab==='orders' ? '!grid' : '' ">
+  <div class="cent__bet">
+    <h2 class="sub__header__primary !pb-0">Orders</h2>
+    <button class="cent gap-2 text-primary text-sm font-bold  " href="" @click="CreateOrder = true"><i class="fa-solid fa-plus"></i><span>Add Orders</span></button>
+  </div>
+  <div class="relative overflow-x-auto border-2 whitespace-nowrap rounded-xl bg-white">
+    <table class="whitespace-nowrap w-full text-sm text-gray-700 border-spacing-2 overflow-x-auto rounded-2xl" role="document">
+      <thead class="bg-gray-200 font-semibold text-start sm:rounded-lg">
+        <tr></tr>
+  <th scope="col">#</th>
+  <th scope="col">Order</th>
+  <th scope="col">Status</th>
+  <th scope="col">Payment Status</th>
+  <th scope="col">Payment Method</th>
+  <th scope="col">Total Amount with Taxes</th>
+  <th scope="col">Total Payments</th>
+  <th scope="col">Created by</th>
+  <th scope="col">Created at</th>
+      </thead>
+      <tbody></tbody>
+  <tr> 
+    <th>1</th>
+    <th><a href="">2314513</a></th>
+    <td>Opened</td>
+    <td>Completed</td>
+    <td>Cash</td>
+    <td>2,343.00 SAR</td>
+    <td>2,393.00 SAR</td>
+    <td>Mahmoud Alaa</td>
+    <td>2 months ago</td>
+  </tr>
+  <tr> 
+    <th>1</th>
+    <th><a href="">2314513</a></th>
+    <td>Opened</td>
+    <td>Completed</td>
+    <td>Cash</td>
+    <td>2,343.00 SAR</td>
+    <td>2,393.00 SAR</td>
+    <td>Mahmoud Alaa</td>
+    <td>2 months ago</td>
+  </tr>
+  <tr> 
+    <th>1</th>
+    <th><a href="">2314513</a></th>
+    <td>Opened</td>
+    <td>Completed</td>
+    <td>Cash</td>
+    <td>2,343.00 SAR</td>
+    <td>2,393.00 SAR</td>
+    <td>Mahmoud Alaa</td>
+    <td>2 months ago</td>
+  </tr>
+  <tr> 
+    <th>1</th>
+    <th><a href="">2314513</a></th>
+    <td>Opened</td>
+    <td>Completed</td>
+    <td>Cash</td>
+    <td>2,343.00 SAR</td>
+    <td>2,393.00 SAR</td>
+    <td>Mahmoud Alaa</td>
+    <td>2 months ago</td>
+  </tr>
+    </table>
+  </div>
+  <div class="cent"> 
+    <div aria-label="Page navigation example">
+      <ul class="flex items-center   text-base gap-3">
+        <li><a class="cent rounded-full justify-center  h-10 w-10  ms-0 leading-tight text-gray-500 bg-white border  border-gray-300  hover:bg-gray-100 hover:text-gray-700     " href="#"><span class="sr-only">Previous</span>
+            <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"></path>
+            </svg></a></li>
+        <li><a class="cent rounded-full justify-center  h-10 w-10  leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700     " href="#">1</a></li>
+        <li><a class="z-10 cent  justify-center  h-10 w-10  leading-tight rounded-full  text-white border border-primary bg-primary hover:bg-red-100 hover:text-red-700 " href="#" aria-current="page">2</a></li>
+        <li><a class="cent rounded-full justify-center  h-10 w-10  leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700     " href="#">3</a></li>
+        <li><a class="cent rounded-full justify-center  h-10 w-10  leading-tight text-gray-500 bg-white border border-gray-300  hover:bg-gray-100 hover:text-gray-700     " href="#"><span class="sr-only">Next</span>
+            <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"></path>
+            </svg></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

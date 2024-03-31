@@ -1,0 +1,116 @@
+include ../mixins/table.pug
+main.flex-grow.grid.gap-6.overflow-hidden.items-start.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12")
+	include ./head-tabs
+	a(href="").header__primary__start Dashboard
+	div.grid.gap-6.text-white.items-start(class="md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4")
+		div(class="  bg-blue-600 rounded-2xl cent__bet p-4")
+			div
+				div(class=" text-lg font-bold capitalize ") 0
+				div(class="opacity-90  text-sm font-normal  tracking-wide") Planned Points
+			div
+				img(src="../assets/dash-planned-points.png", alt="" class="w-10 h-10")
+		div(class="  bg-[#35B677] rounded-2xl cent__bet p-4")
+			div
+				div(class=" text-lg font-bold capitalize ") 0
+				div(class="opacity-90  text-sm font-normal  tracking-wide") Total achieved
+			div
+				img(src="../assets/dash-target-daily.png", alt="" class="w-10 h-10")
+		div(class="  bg-[#AC7AB5] rounded-2xl cent__bet p-4")
+			div
+				div(class=" text-lg font-bold capitalize ") 0
+				div(class="opacity-90  text-sm font-normal  tracking-wide") Remaining points
+			div
+				img(src="../assets/dash-remaining-points.png", alt="" class="w-10 h-10")
+		div(class="  bg-[#D9AC36] rounded-2xl cent__bet p-4")
+			div
+				div(class=" text-lg font-bold capitalize ") 0
+				div(class="opacity-90  text-sm font-normal  tracking-wide") Target Daily
+			div
+				img(src="../assets/dash-target-daily.png", alt="" class="w-10 h-10")
+	div.grid.gap-6.items-start(class="lg:grid-cols-3")
+		div(class="lg:col-span-2 grid gap-6 items-start")
+			div(class="  bg-white rounded-2xl border border-gray-300  items-start grid gap-6 p-4")
+				.cent__bet 
+					.sub__header__primary Recent Tasks
+					a(href="" class="view__more") View More
+				+table()
+					+t('thead')
+						th(scope='col') Account Name
+						th(scope='col') Task Type
+						th(scope='col') Status
+						
+					+t('tbody')
+						tr 
+							th Rwan.H( English / online / Barem) Nov.2023 F1
+							td Follow up
+							td
+								div(class="w-[100px] h-[34px] p-2.5 bg-amber-400 bg-opacity-10 rounded-xl justify-center items-center gap-2.5 inline-flex")
+									div(class="text-orange-500 text-sm font-medium  leading-[14px]") Not Started
+						tr 
+							th Rwan.H( English / online / Barem) Nov.2023 F1
+							td Follow up
+							td
+								div(class="w-[100px] h-[34px] p-2.5 bg-amber-400 bg-opacity-10 rounded-xl justify-center items-center gap-2.5 inline-flex")
+									div(class="text-orange-500 text-sm font-medium  leading-[14px]") Not Started
+						tr 
+							th Rwan.H( English / online / Barem) Nov.2023 F1
+							td Follow up
+							td
+								div(class="w-[100px] h-[34px] p-2.5 bg-amber-400 bg-opacity-10 rounded-xl justify-center items-center gap-2.5 inline-flex")
+									div(class="text-orange-500 text-sm font-medium  leading-[14px]") Not Started
+			div(class="  bg-white rounded-2xl border border-gray-300  items-start grid gap-6 p-4")
+				.cent__bet 
+					.sub__header__primary Recent Tasks
+					a(href="" class="view__more") View More
+				+table()
+					+t('thead')
+						th(scope='col')  Name
+						th(scope='col') Lead Type
+						th(scope='col') Product
+						
+					+t('tbody')
+						tr 
+							th Majid Numan Abbas Al-Anzi
+							td Call
+							td Cyber Security Online
+						tr 
+							th Majid Numan Abbas Al-Anzi
+							td Call
+							td Cyber Security Online
+						tr 
+							th Majid Numan Abbas Al-Anzi
+							td Call
+							td Cyber Security Online
+		div(class="lg:col-span-1 grid gap-6 items-start ")
+			div(class=" bg-white rounded-2xl border border-gray-300 items-start  p-4 ")
+				.sub__header__primary Today&#39;s Activities
+				div(class="max-h-[330px]  overflow-y-auto grid gap-4 py-1")
+					a( href="" onclick="markAsViewed(this)").notification.viewed
+						span.font-bold Sara Elzanaty 
+						span assigned to you new tasks
+						.opacity-75.text-xs 2 Dec, 2023, 2:33 pm
+					a(href="" onclick="markAsViewed(this)").activity.notification
+						span.font-bold Sara Elzanaty 
+						span assigned to you new tasks
+						.opacity-75.text-xs 2 Dec, 2023, 2:33 pm
+					a( href="" onclick="markAsViewed(this)").notification.viewed
+						span.font-bold Sara Elzanaty 
+						span assigned to you new tasks
+						.opacity-75.text-xs 2 Dec, 2023, 2:33 pm
+					a(href="" onclick="markAsViewed(this)").activity.notification
+						span.font-bold Sara Elzanaty 
+						span assigned to you new tasks
+						.opacity-75.text-xs 2 Dec, 2023, 2:33 pm
+					a(href="" onclick="markAsViewed(this)").activity.notification
+						span.font-bold Sara Elzanaty 
+						span assigned to you new tasks
+						.opacity-75.text-xs 2 Dec, 2023, 2:33 pm
+					a(href="" onclick="markAsViewed(this)").activity.notification
+						span.font-bold Sara Elzanaty
+						span assigned to you new tasks
+						.opacity-75.text-xs 2 Dec, 2023, 2:33 pm
+			div(class=" h-[300px] bg-white rounded-2xl border border-gray-300 items-start p-4")
+				.sub__header__primary Quality Feedback
+				.w-ful.h-full.py-6
+					#chartdiv
+

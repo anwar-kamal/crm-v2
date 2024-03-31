@@ -1,0 +1,10 @@
+doctype html
+html(lang="en" dir="ltr" x-data="{ lang: localStorage.getItem('lang') || 'en', dir: localStorage.getItem('dir') || 'ltr', toggleDirLang() { this.lang = this.lang === 'en' ? 'ar' : 'en'; this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr'; this.updateAttributes(); window.location.reload(); }, setToLTR() { this.lang = 'en'; this.dir = 'ltr'; this.updateAttributes(); window.location.reload(); }, setToRTL() { this.lang = 'ar'; this.dir = 'rtl'; this.updateAttributes(); window.location.reload(); }, updateAttributes() { localStorage.setItem('dir', this.dir); localStorage.setItem('lang', this.lang); document.documentElement.dir = this.dir; document.documentElement.lang = this.lang; }}", x-init="() => { document.documentElement.lang = lang; document.documentElement.dir = dir; }")
+   include ./components/head
+   body( x-data="{sideBar:false,editStartDate:false,orderSuccessfully:false}")
+      include ./components/header-mob
+      include ./components/sidebar-mob
+      .flex.bg-bggray
+         include ./components/sidebar-desktop
+         include ./components/target-component
+      include ./components/scripts

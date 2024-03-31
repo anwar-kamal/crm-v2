@@ -1,0 +1,60 @@
+include ../mixins/button-sec.pug
+div(x-show="tab==='Follow'" class="lg:grid-cols-3 lg:divide-x hidden" :class="tab==='Follow' ? '!grid' : ' ' "  ) 
+	div(class="lg:col-span-2 px-4" x-data="{ subTab : 'comments' }")
+		ul(class=" w-full whitespace-nowrap   overflow-x-auto flex gap-1 items-center lg:col-span-2   border-b "  )
+			li(class=" hover:text-primary  leading-7  tracking-wider font-semibold px-4 py-3 transition-all duration-300" :class="subTab === 'comments'? ' border-b border-primary  text-primary':'text-neutral-700'" @click="subTab = 'comments'")
+				button Comments
+			li(class=" hover:text-primary  leading-7 tracking-wider font-semibold px-4 py-3 transition-all duration-300 " :class="subTab === 'status' ? ' border-b border-primary  text-primary':'text-neutral-700 '"  @click="subTab = 'status'")
+				button Status
+		div(x-show="subTab==='comments'" :class="subTab==='comments' ? '!block' : '' "  class=" hidden")
+			.py-6.grid.gap-6(class=" max-h-[360px] overflow-y-auto")
+				include ./comment-message
+				include ./comment-message
+				include ./comment-message
+				include ./comment-message
+				include ./comment-message
+				include ./comment-message
+				include ./comment-message
+				include ./comment-message
+				include ./comment-message
+			div( class="grid gap-4 p-4 bg-white rounded-2xl border border-gray-300 my-4")
+				select     
+					option( style="color:#eee !important" disabled selected hidden) Lead Status
+					option(value='US') United States
+					option(value='CA') Canada
+					option(value='FR') France
+					option(value='DE') Germany	
+				textarea#comment(name="", cols="30", rows="5"   ) 
+				div(class="grid grid-cols-2   md:flex justify-between items-center w-full gap-1")
+					div(@click="CreateOpp = true")
+						+button-sec('Create opportunity','','')
+					button.button__primary Post Comment
+
+		div(x-show="subTab==='status'" :class="subTab==='status' ? '!block' : '' "  class=" hidden" )
+			.py-6.grid.gap-6
+				include ./conversation-status
+				include ./conversation-status
+				include ./conversation-status
+				include ./conversation-status
+				include ./conversation-status
+
+	div(class=" px-4 " x-data="{ subTab : 'upcoming' }")
+		ul(class=" w-full whitespace-nowrap    flex lg:justify-between  xl:justify-start gap-4 lg:gap-2  xl:gap-4 items-center  border-b "  )
+			li(class=" hover:text-primary leading-7   font-semibold  text-sm py-3 transition-all duration-300" :class="subTab === 'upcoming'? ' border-b border-primary  text-primary':'text-neutral-700'" @click="subTab = 'upcoming'")
+				button Upcoming
+			li(class=" hover:text-primary leading-7  font-semibold  text-sm py-3 transition-all duration-300 " :class="subTab === 'Completed' ? ' border-b border-primary  text-primary':'text-neutral-700 '"  @click="subTab = 'Completed'")
+				button Completed
+		div.relative(x-show="subTab==='upcoming'" class=" h-[calc(100%-60px)] hidden" :class="subTab==='upcoming' ? '!block' : '' "  ) 
+			.py-6.grid.gap-6.content-start(class=" h-3/4 overflow-y-auto")
+				include ./upcoming
+				include ./upcoming
+				include ./upcoming
+				include ./upcoming
+			.absolute.bg-white.w-full(class="bottom-7 mt-4" @click="newEvent = true")
+				+button-sec('Add New Event','',' w-full')
+		div.relative(x-show="subTab==='Completed'" class=" h-[calc(100%-60px)] hidden" :class="subTab==='Completed' ? '!block' : '' "  ) 
+			.py-6.grid.gap-6.content-start(class=" h-3/4 overflow-y-auto")
+				include ./completed-notificatioin
+				include ./completed-notificatioin
+				include ./completed-notificatioin
+				include ./completed-notificatioin

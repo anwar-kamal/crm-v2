@@ -1,0 +1,12 @@
+
+<div class=" hidden" x-show="open" :class="open ? '!block' : '' ">
+  <div class="fixed inset-0 bg-black bg-opacity-50 p-4 cent z-50">
+    <div class="bg-white rounded-2xl relative p-8 grid gap-6 max-w-[560px] w-full" role="document">
+  <button class="fa-solid fa-x" @click="open = false"></button>
+      <div class="grid gap-6"><img class="w-16 h-16 mx-auto" src="../assets/task-complete.png" alt=""/>
+  <div class="text-center text-neutral-700 text-lg font-semibold    leading-[18px]">Password changed successfully</div>
+  <button class="button__primary"> <a href="">Go to Login Page</a></button>
+      </div>
+    </div>
+  </div>
+</div>

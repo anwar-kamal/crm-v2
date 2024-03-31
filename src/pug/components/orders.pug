@@ -1,0 +1,65 @@
+include ../mixins/table.pug
+.p-4.w-full.overflow-x-auto.gap-6(x-show="tab==='orders'"  :class="tab==='orders' ? '!grid' : '' "  class=" hidden")
+	.cent__bet
+		h2.sub__header__primary(class="!pb-0") Orders
+		button.cent.gap-2(class="text-primary text-sm font-bold  " href="" @click="CreateOrder = true")
+			i( class="fa-solid fa-plus")
+			span Add Orders
+	+table()
+		+t('thead')
+			th(scope='col') #
+			th(scope='col') Order
+			th(scope='col') Status
+			th(scope='col') Payment Status
+			th(scope='col') Payment Method
+			th(scope='col') Total Amount with Taxes
+			th(scope='col') Total Payments
+			th(scope='col') Created by
+			th(scope='col') Created at
+		+t('tbody')
+			tr 
+				th 1
+				th
+					a(href="") 2314513
+				td Opened
+				td Completed
+				td Cash
+				td 2,343.00 SAR
+				td 2,393.00 SAR
+				td Mahmoud Alaa
+				td 2 months ago
+			tr 
+				th 1
+				th
+					a(href="") 2314513
+				td Opened
+				td Completed
+				td Cash
+				td 2,343.00 SAR
+				td 2,393.00 SAR
+				td Mahmoud Alaa
+				td 2 months ago
+			tr 
+				th 1
+				th
+					a(href="") 2314513
+				td Opened
+				td Completed
+				td Cash
+				td 2,343.00 SAR
+				td 2,393.00 SAR
+				td Mahmoud Alaa
+				td 2 months ago
+			tr 
+				th 1
+				th
+					a(href="") 2314513
+				td Opened
+				td Completed
+				td Cash
+				td 2,343.00 SAR
+				td 2,393.00 SAR
+				td Mahmoud Alaa
+				td 2 months ago
+	.cent 
+		include ./pagination

@@ -1,0 +1,12 @@
+div(class=" bg-white flex justify-center items-center p-4 md:p-16 w-full")
+	.grid.gap-8.justify-center.w-full
+		img(src="../assets/full-logo.png", alt="" class="max-w-[600px] max-h-[600px]")
+		div(class="header__primary ") Forgot your password
+		div(class="max-w-[541px] text-center text-zinc-600 text-sm font-normal  leading-tight tracking-wide") Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.
+		form(class="grid gap-8 w-full" )
+			.grid.gap-2 
+				label(for="username") Email
+				input(type="text", name="username" id="username" placeholder="Enter user email" required   )
+			button(class="button__primary")
+				a(href="./reset-password.html")  Email Password Reset Link
+

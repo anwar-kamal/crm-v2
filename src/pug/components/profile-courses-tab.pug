@@ -1,0 +1,65 @@
+include ../mixins/table.pug
+.p-4.w-full.overflow-x-auto.gap-6(x-show="tab==='Courses'"  :class="tab==='Courses' ? '!grid' : '' "  class=" hidden")
+	+table()
+		+t('thead')
+			th(scope='col') #
+			th(scope='col') Name
+			th(scope='col') Offer
+			th(scope='col') Order
+			th(scope='col') Course Branch
+			th(scope='col') Price
+			th(scope='col') Tax Amount
+			th(scope='col') Price with Tax
+			th(scope='col') Status
+		+t('tbody')
+			tr 
+				th 1
+				td
+					a(href="") General English (Level 1)
+				td 
+					div.w-64.whitespace-pre-line  سنة 2023 تجديد - الباقة التأهيلية 3 مستويات حضوري
+				td
+					a.text-primary.font-semibold(href="")  2316076
+				td Proleaders Hamdaniyah Jed - Female
+				td 1,200.00 SAR
+				td 0.00 SAR
+				td 1,200.00 SAR
+				td 
+					.cent.gap-3
+						span Open 
+						span.cursor-pointer(@click="")
+							include ./svgs/eye
+		
+			tr 
+				th 1
+				td
+					a(href="") General English (Level 1)
+				td 
+					div.w-64.whitespace-pre-line  سنة 2023 تجديد - الباقة التأهيلية 3 مستويات حضوري
+				td
+					a.text-primary.font-semibold(href="")  2316076
+				td Proleaders Hamdaniyah Jed - Female
+				td 1,200.00 SAR
+				td 0.00 SAR
+				td 1,200.00 SAR
+				td 
+					.cent.gap-3
+						span Ended
+			tr 
+				th 1
+				td
+					a(href="") General English (Level 1)
+				td 
+					div.w-64.whitespace-pre-line  سنة 2023 تجديد - الباقة التأهيلية 3 مستويات حضوري
+				td
+					a.text-primary.font-semibold(href="")  2316076
+				td Proleaders Hamdaniyah Jed - Female
+				td 1,200.00 SAR
+				td 0.00 SAR
+				td 1,200.00 SAR
+				td 
+					.cent.gap-3
+						span Open 
+						span.cursor-pointer(@click="moreInfoCourse=true")
+							include ./svgs/eye
+		

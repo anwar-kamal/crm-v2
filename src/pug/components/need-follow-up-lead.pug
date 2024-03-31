@@ -1,0 +1,311 @@
+include ../mixins/table.pug
+include ../mixins/button-sec.pug
+include ./filter
+main.flex-grow.grid.gap-6.overflow-hidden.content-start.relative(class="p-3 md:py-6 md:px-6  lg:py-8 lg:px-12")
+	include ./head-tabs
+	.cent__bet
+		a(href="").header__primary__start New Leads
+		.relative(x-data="{open:false}")
+			button.button__primary(  @click="open = !open" class="z-[5555]") 
+				span(href="")  Add New Lead
+				i(class="fa-solid fa-chevron-down")
+			div.absolute.-left-0.-right-0.z-40(x-show="open" :class="open ? '!block' : '' "  class="top-[55px] hidden" x-transition:enter="transition transform ease-out duration-500 "
+			x-transition:enter-start="opacity-0 translate-y-[-50px]"
+			x-transition:enter-end="opacity-100 "
+			x-transition:leave="transition transform ease-in duration-300"
+			x-transition:leave-start="opacity-100 translate-y-0"
+			x-transition:leave-end="opacity-0 translate-y-[-50px]")
+				ul.bg-white.rounded-2xl.text-neutral-700.grid.gap-4.p-4.justify-center.drop-shadow-md
+					li(class=" cursor-pointer hover:text-primary font-semibold tracking-wider")
+						a(href="/dist/html/add-new-lead.html")  Add New Lead
+					li(class="cursor-pointer hover:text-primary font-semibold tracking-wider")
+						a(href="") Import CSV
+	.grid(class=" md:grid-cols-12 gap-6") 
+		form(class="md:col-span-4 col-span-12")
+			label(for="default-search", class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white") Search
+			div(class="relative")
+				div(class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none")
+					svg(class="w-4 h-4 text-gray-500 dark:text-gray-400", aria-hidden="true", xmlns="http://www.w3.org/2000/svg", fill="none", viewBox="0 0 20 20")
+						path(stroke="currentColor", stroke-linecap="round", stroke-linejoin="round", stroke-width="2", d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z")
+				input#default-search(type="search", class=" w-full !px-9", placeholder="Search by name , phone ...", required)
+		div(class=" lg:col-span-4 md:col-span-1 hidden md:block")
+		div(class=" md:col-span-7  grid grid-cols-2 gap-6 lg:col-span-4 col-span-12")
+			div(class="relative cent w-full h-full")
+				div(class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none")
+					svg(class="w-4 h-4  text-gray-500 dark:text-gray-400", aria-hidden="true", xmlns="http://www.w3.org/2000/svg", fill="currentColor", viewBox="0 0 20 20")
+						path(d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z")
+				input(datepicker, type="text", class="w-full !px-10", placeholder="Select date")
+			div(class="w-full" @click="filter = true")
+				+button-sec('Filter',"fa-solid fa-filter","w-full ")
+	+table()
+		+t('thead')
+			th.sticky.left-0(scope='col') #
+			th.cursor-pointer(scope='col') 
+				span Code
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Name
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Phone
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Lead Status
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Lead Type
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Lead source
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Account
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Campaign
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Product
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Branch 
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span City
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Google ID
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Last Comment
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Created at
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+			th.cursor-pointer(scope='col') 
+				span Created by
+				i( class="fa-solid fa-chevron-down rtl:mr-3 ltr:ml-3")
+		+t('tbody')
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+			tr 
+				th.sticky.left-0 1
+				td 2952
+				th.border-none
+					a(href="/dist/html/profile-follow-up-lead.html")  Abdul Rahman Moeed Al Harthy
+				td 0556504306
+				td No answered
+				td Call
+				td Facebook Ads
+				td Proleadersco
+				td -
+				td General English Online Live
+				td Proleaders Rayyan Riyad
+				td Riyadh
+				td -
+				td.cent.gap-2.w-96
+					span.truncate Asking for details about course no 101 for his child
+					a.text-primary.font-semibold(href="") see more
+				td Nov 30, 2023, 8:22 pm
+				td Rana El Dardiry
+
+	.cent
+		include ./pagination

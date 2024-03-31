@@ -1,0 +1,29 @@
+
+<div class=" bg-white flex justify-center items-center p-4 md:p-16 w-full">
+  <div class="grid gap-8 justify-center w-full"><img class="max-w-[800px] max-h-[800px]" src="../assets/full-logo.png" alt=""/>
+    <div class="header__primary ">Login</div>
+    <form class="grid gap-8 w-full">
+      <div class="grid gap-2"> 
+        <label for="username">Email</label>
+        <input type="text" name="username" id="username" placeholder="Enter user email" autocomplete="username" required="required"/>
+      </div>
+      <div class="grid gap-2 relative"> 
+        <label for="password">Password</label>
+        <input class="input-password" type="password" name="password" id="password" placeholder=" Enter user password" autocomplete="current-password" required="required"/>
+        <div class="eye__password fa-regular fa-eye"></div>
+      </div>
+      <div class=" text-neutral-700 text-base font-semibold capitalize leading-none">Company</div>
+      <div class="cent__bet gap-4  flex-wrap whitespace-nowrap w-full">
+        <div class="radio-button">
+          <input class="radio-button__input" type="radio" name="radio-group" id="radio2"/>
+          <label class="radio-button__label" for="radio2"><span class="radio-button__custom"></span>Proleaders Company for Education</label>
+        </div>
+        <div class="radio-button">
+          <input class="radio-button__input" type="radio" name="radio-group" id="radio1"/>
+          <label class="radio-button__label" for="radio1"><span class="radio-button__custom"></span>SilaVisions Company Ltd.</label>
+        </div>
+      </div>
+      <button class="button__primary">Login</button><a class="text-primary text-base font-bold  capitalize leading-none text-center" href="./forget.html"> Forgot your password?</a>
+    </form>
+  </div>
+</div>
